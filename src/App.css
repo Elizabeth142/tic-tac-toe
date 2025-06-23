@@ -1,0 +1,125 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(to right, #f2f2f2, #dfe9f3);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #333333;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333333;
+  font-weight: 600;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.square {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #8ecae6;
+  float: left;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 80px;
+  height: 80px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 80px;
+  cursor: pointer;
+  border-radius: 15px;
+  color: #023047;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.square:hover {
+  background: #8ecae6;
+  color: white;
+  transform: scale(1.05);
+}
+
+.square.winning {
+  background: #ffb703;
+  color: #ffffff;
+  border-color: #fb8500;
+  box-shadow: 0 0 15px rgba(251, 133, 0, 0.7);
+}
+.reset-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+.reset-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #ff7eb3, #ff758c);
+  box-shadow: 0 6px 20px rgba(255, 117, 140, 0.6);
+}
+
+.reset-button:active {
+  transform: scale(0.95);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.square.winning {
+  background: #ffde59;
+  color: #d62828;
+  border-color: #d62828;
+  box-shadow: 0 0 15px rgba(214, 40, 40, 0.7);
+  animation: pulse 0.8s infinite;
+}
